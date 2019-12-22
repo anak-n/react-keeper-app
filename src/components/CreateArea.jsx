@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import UUID4 from "uuid/v4";
 
 function CreateArea(props) {
   const [currentNote, setCurrentNote] = useState(emptyNote());
@@ -12,6 +13,7 @@ function CreateArea(props) {
 
   function handleNoteSubmit(event) {
     event.preventDefault();
+    currentNote["key"] = UUID4();
     props.addToNotes(currentNote);
     setCurrentNote(emptyNote());
   }

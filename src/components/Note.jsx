@@ -2,8 +2,8 @@ import React from "react";
 
 function Note(props) {
   function handleDelete() {
-    let idToDelete = props.id;
-    props.onDelete(idToDelete);
+    console.log(`delete requwest for ${props.id}`);
+    props.onDelete(props.id);
   }
 
   return (
